@@ -43,6 +43,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Run Docker Compose
         working-directory: .
         run: docker-compose up -d --build
